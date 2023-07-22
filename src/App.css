@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  max-height: 100vh;
 }
 
 .App-logo {
@@ -26,6 +27,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+
+canvas.particles-bg-canvas-self{
+  height: 1280px;
 }
 
 @keyframes App-logo-spin {
