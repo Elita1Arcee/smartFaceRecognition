@@ -5,6 +5,7 @@ import Logo from './components/Logo/Logo'
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm'
 import RankUserInfo from './components/RankUserInfo/RankUserInfo';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import SignIn from './components/SignIn/SignIn';
 import './App.css';
 
 
@@ -14,7 +15,8 @@ class App extends Component {
     this.state = {
       input: '',
       imgUrl: 'https://picsum.photos/id/633/300',
-      box: {}
+      box: {},
+      route: 'signIn'
     }
   }
 
@@ -90,20 +92,27 @@ fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VE
     .catch(error => console.log('error', error));
   }
 
+  onRouteChange = () =>{
+    this.setState({route: 'home'});
+  }
+
   render() {
     return (
-    <div className="App">
-      <ParticlesBg className='particles-bg-canvas-self' type="cobweb" bg={true} />
-        <div>
+        <div className="App">
+        <ParticlesBg className='particles-bg-canvas-self' type="cobweb" bg={true} />
           <Navigation />
-          <Logo />
-          <RankUserInfo />
+          {this.state.route === 'signIn' ? <SignIn onRouteChange = {this.onRouteChange}/> : 
+          <div>
+          <Logo/> 
+          <RankUserInfo/>
           <ImageLinkForm onInputChange={this.onInputChange} onBtnSubmit={this.onBtnSubmit}/>
-          
           <FaceRecognition box={this.state.box} imgUrl={this.state.imgUrl} />
+          </div>
+        }
+          
+          
+          
         </div>
-    
-    </div>
   )
   }
   
