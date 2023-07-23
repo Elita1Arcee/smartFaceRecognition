@@ -100,7 +100,7 @@ fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VE
           <RankUserInfo />
           <ImageLinkForm onInputChange={this.onInputChange} onBtnSubmit={this.onBtnSubmit}/>
           
-          <FaceRecognition imgUrl={this.state.imgUrl} />
+          <FaceRecognition box={this.state.box} imgUrl={this.state.imgUrl} />
         </div>
     
     </div>
