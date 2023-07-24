@@ -3,7 +3,7 @@ import ParticlesBg from 'particles-bg'
 import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo'
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm'
-import RankUserInfo from './components/RankUserInfo/RankUserInfo';
+//import RankUserInfo from './components/RankUserInfo/RankUserInfo';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
@@ -15,7 +15,7 @@ class App extends Component {
     super();
     this.state = {
       input: '',
-      imgUrl: ' ',
+      imgUrl: 'https://picsum.photos/id/633/300',
       box: {},
       route: 'signIn'
     }
@@ -105,7 +105,7 @@ fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VE
           {this.state.route === 'home' 
           ? <div>
           <Logo/> 
-          <RankUserInfo/>
+          {/* <RankUserInfo/> */}
           <ImageLinkForm onInputChange={this.onInputChange} onBtnSubmit={this.onBtnSubmit}/>
           <FaceRecognition box={this.state.box} imgUrl={this.state.imgUrl} />
           </div> : 

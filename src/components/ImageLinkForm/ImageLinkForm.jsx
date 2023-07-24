@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
 
 import './ImageFormLink.css'
-import FaceRecognition from '../FaceRecognition/FaceRecognition';
 
 function ImageLinkForm({ onInputChange, onBtnSubmit }) {
 
@@ -13,7 +11,7 @@ function ImageLinkForm({ onInputChange, onBtnSubmit }) {
             </p>
             <div className='ma3 form center br3'>
                 <div className='pa5 shadow-5'>
-                    <input className='f4 pa2 w-70 center' type='text' onChange={onInputChange}/>
+                    <input className='f4 pa2 w-70 center' type='text' onChange={onInputChange} placeholder='Enter URL or website of image'/>
                     <button className='w-30 grow f4 link ph3 pv2 dib white bg-light-green' onClick={onBtnSubmit}>Detect</button>
                 </div>
             </div>

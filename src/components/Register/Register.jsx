@@ -4,7 +4,7 @@ function Register({ onRouteChange }){
 
     return(
         <main className="ma2 pa4 black-80">
-<form className="measure center">
+<div className="measure center">
 <fieldset
   id="sign_up"
   className="ba b--transparent ph0 mh0"
@@ -96,7 +96,7 @@ Sign In
 Forgot your password?
 </a>
 </div>
-</form>
+</div>
 </main>
     )
 }
